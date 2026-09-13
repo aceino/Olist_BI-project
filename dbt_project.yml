@@ -1,0 +1,21 @@
+name : 'olist_bi'
+
+version : 1.0.0
+
+profile: 'olist_bi'
+
+model-paths : ["models"]
+analysis-paths : ["analysis"]
+test-paths : ["tests"]
+seed-paths : ["seeds"]
+ 
+clean-targets: 
+  - "target"
+  - "dbt_packages"
+
+models : 
+  olist_bi:
+    staging : 
+      +materialized : view 
+    marts : 
+      +materialized: table

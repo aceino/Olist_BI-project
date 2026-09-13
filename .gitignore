@@ -5,3 +5,4 @@ busines_metrics.txt
 logs
 target
 seeds/
+*.duckdb

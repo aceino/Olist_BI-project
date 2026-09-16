@@ -73,8 +73,6 @@ Three pages, each covering one business domain:
 - **Customers** — average CLV, average orders per customer, top 10 customers by value
 - **Sellers** — fulfillment time vs. sales volume scatter plot, seller performance table
 
-*(Screenshots to be added here)*
-
 ## Limitations
 
 - **Snapshot, not live-connected:** Power BI reads from exported Parquet files, not a live DuckDB connection. Re-running the dbt pipeline requires re-exporting before the dashboard reflects updated data.

@@ -1,6 +1,6 @@
 # Olist E-Commerce BI Dashboard — Delivery, Customer & Seller Performance Analytics
 
-A BI Engineer portfolio project analyzing the Olist Brazilian E-Commerce dataset, covering delivery performance, customer value, and seller efficiency through a dbt-modeled star schema and a Power BI dashboard.
+A BI Engineer portfolio project analyzing the Olist Brazilian E-Commerce dataset, covering delivery performance, customer value, and seller efficiency through a dbt-modeled star schema.
 
 ## Business Context
 
@@ -24,12 +24,9 @@ Olist CSV files (Kaggle)
         │
         ▼
    Parquet export
-        │
-        ▼
-   Power BI Desktop
 ```
 
-**Stack:** DuckDB, dbt-core + dbt-duckdb, Power BI Desktop
+**Stack:** DuckDB, dbt-core + dbt-duckdb, 
 
 **A deliberate constraint, not an oversight:** this project was built with no access to Docker or a PostgreSQL server. Rather than treat that as a blocker, the stack was chosen around it — DuckDB's in-process, file-based design eliminates the need for a database server entirely, while still supporting the same dbt workflow (staging → intermediate → marts, testing, documentation) used in production data warehouses. Power BI connects via exported Parquet files rather than a live ODBC connection, since DuckDB's single-writer file lock would otherwise conflict with an active dbt development session.
 

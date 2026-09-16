@@ -65,14 +65,6 @@ Plotting fulfillment time against items sold per seller shows that high-volume s
 **3. Outliers were investigated, not deleted.**
 One seller shows an average fulfillment time of 190 days on a single item — confirmed as an isolated case, not a data quality issue affecting other sellers. It remains in the underlying data and mart (for transparency) but is filtered out of the scatter chart's visual scale so it doesn't compress the readability of the broader pattern.
 
-## Dashboard
-
-Three pages, each covering one business domain:
-
-- **Logistics** — average fulfillment time, on-time delivery rate, trend over time
-- **Customers** — average CLV, average orders per customer, top 10 customers by value
-- **Sellers** — fulfillment time vs. sales volume scatter plot, seller performance table
-
 ## Limitations
 
 - **Snapshot, not live-connected:** Power BI reads from exported Parquet files, not a live DuckDB connection. Re-running the dbt pipeline requires re-exporting before the dashboard reflects updated data.

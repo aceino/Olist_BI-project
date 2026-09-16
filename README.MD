@@ -66,7 +66,5 @@ Plotting fulfillment time against items sold per seller shows that high-volume s
 One seller shows an average fulfillment time of 190 days on a single item — confirmed as an isolated case, not a data quality issue affecting other sellers. It remains in the underlying data and mart (for transparency) but is filtered out of the scatter chart's visual scale so it doesn't compress the readability of the broader pattern.
 
 ## Limitations
-
-- **Snapshot, not live-connected:** Power BI reads from exported Parquet files, not a live DuckDB connection. Re-running the dbt pipeline requires re-exporting before the dashboard reflects updated data.
 - **Sell-through rate was dropped.** Olist is an order-marketplace dataset with no true inventory/stock-on-hand data, so a real sell-through metric couldn't be computed without introducing simulated data. Rather than present a fabricated number as fact, this metric was excluded and replaced with the seller performance and CLV metrics above.
 - **CLV is historical, not predictive.** Given the short dataset window (2016–2018) and the one-time-buyer pattern, a predictive CLV model would be built on too little repeat-purchase signal to be meaningful. Historical/observed CLV is used instead and documented as such.
